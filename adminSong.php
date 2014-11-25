@@ -42,7 +42,7 @@
 
 	<h2>Songs</h2>
 	<div id="songs-accordion">
-		<h3>Wheels (#22)</h3>
+		<h3 id="s22">Wheels (#22)</h3>
 		<div>
 			<form action="adminSong.php" method="post" name="frmSong">
 				id: 22<br>
@@ -68,7 +68,7 @@
 			</form>
 		</div>
 
-		<h3>Colors (#23)</h3>
+		<h3 id="s23">Colors (#23)</h3>
 		<div>
 			<form action="adminSong.php" method="post" name="frmSong">
 				id: 23<br>

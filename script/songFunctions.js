@@ -2,13 +2,9 @@
 
 /**
 *	Funktionen copySongFormData kopierar inkommande parametrar till formul?et "frmNewUpdateSong".
-*	@param {Number} inId - Id (prim?nyckel i databasen) f?r s?gen som skall redigeras.
-*	@param {String} inFileName - Filnamn f?r s?gen som skall redigeras.
-*	@param {Number} inArtistId - Id (fr?mandenyckel i databasen) f?r artisten s?gen knyts till.
-*	@param {String} inTitle - S?gtitel f?r s?gen som skall redigeras.
-*	@param {Number} inCount - Antal "gilla" f? s?gen som skall redigeras.
-*	@version 1.1
-*	@author Peter Bellstr?m, Jeremy Karlsson
+*	@param {Element} inForm - Element som skall kopieras
+*	@version 1.0
+*	@author Jeremy Karlsson
 */
 function copySongFormData(inForm) {
   var theForm = $("#frmNewUpdateSong");
@@ -29,7 +25,7 @@ function copySongFormData(inForm) {
 *	@author Peter Bellstr?m
 */
 function verifyDeleteOfSong(inId, inTitle) {
-   return window.confirm("Delete " + inId + " " + inTitle + "?");
+   return window.confirm("Delete song #" + inId + ", " + inTitle + "?");
 }
 
 /**
@@ -41,14 +37,12 @@ function verifyDeleteOfSong(inId, inTitle) {
 *	@author Peter Bellstr?m
 */
 function checkFileExtension(inFileName) {
-
-    var fileExtension = inFileName.substring(inFileName.length - 3);
-	fileExtension = fileExtension.toLowerCase();
-
-    if(fileExtension !== 'ogg'){
-        return false;
-    }
-    return true;
+  var fileExtension = inFileName.substring(inFileName.length - 3);
+  fileExtension = fileExtension.toLowerCase();
+  if(fileExtension !== 'ogg') {
+    return false;
+  }
+  return true;
 }
 
 /**
@@ -119,7 +113,7 @@ $('form').submit(function(e) {
   if (verifyDeleteOfSong(id, $(e.target).find('[name=hidTitle]').val())) {
     console.debug('Delete comment w. AJAX.');
     $(e.target.parentNode).remove();
-    $('h3#c' + id).remove();
+    $('h3#s' + id).remove();
   } else {
     console.debug('Canceled delete.');
   }
