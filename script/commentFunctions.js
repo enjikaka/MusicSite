@@ -14,6 +14,10 @@ function verifyDeleteOfComment(inId, inText){
     return window.confirm("Delete " + inId + ": " + inText + "?");
 }
 
-$(document).load(function() {
-
+$('form').submit(function(e) {
+  if (verifyDeleteOfComment($(e.target).find('[name=hidId]').val(), $(e.target).find('[name=hidText]').val())) {
+    console.debug('Delete comment.');
+  } else {
+    e.preventDefault();
+  }
 });

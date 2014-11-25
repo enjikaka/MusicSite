@@ -20,24 +20,6 @@
       }
     ?>
     <title><?php echo($title); ?></title>
-    <script src="jquery/jquery-2.1.1.js" defer></script>
-    <?php
-      if(isset($slimbox)) {
-    ?>
-      <script src="slimbox2/js/slimbox2.js" defer></script>
-    <?php
-      }
-      if(isset($accordion)) {
-    ?>
-      <script src="jquery-ui-1.11.1.custom/jquery-ui.js" defer></script>
-    <?php
-      }
-      if(isset($script)) {
-    ?>
-      <script src="script/<?php echo($script); ?>" defer></script>
-    <?php
-      }
-    ?>
   </head>
 <body>
 <div id="wrapper">
