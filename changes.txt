@@ -1,0 +1,11 @@
+# adminArtist.php
+
+-
+
+# adminComment.php
+
+-
+
+# adminSong.php
+
+- Added HTML5 input type reset
