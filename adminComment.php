@@ -19,7 +19,7 @@
 			insertdate: 2013-10-22 11:27:48<br>
 			<input type="hidden" name="hidId" value="58">
 			<input type="hidden" name="hidText" value="hahahah">
-			<input type="submit" name="btnDelete" value="Delete">
+			<button type="submit" name="btnDelete">Delete</button>
 		</form>
 		<hr>
 		<form action="adminComment.php" method="post" name="frmComment">
@@ -29,7 +29,7 @@
 			insertdate: 2013-09-27 08:58:55<br>
 			<input type="hidden" name="hidId" value="57">
 			<input type="hidden" name="hidText" value="Bästa låten...">
-			<input type="submit" name="btnDelete" value="Delete">
+			<button type="submit" name="btnDelete">Delete</button>
 		</form>
 	</div>
 

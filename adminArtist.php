@@ -26,8 +26,9 @@
 
       <label for="filePictureFileName">Picture</label>
       <input type="file" id="filePictureFileName" name="filePictureFileName" title="Picture"><br>
-      <input type="submit" id="btnSave" name="btnSave" value="Save" />
-      <input type="button" id="btnReset" name="btnReset" value="Reset" />
+
+      <button type="submit" id="btnSave" name="btnSave">Save</button>
+      <button type="reset" id="btnReset" name="btnReset">Reset</button>
     </form>
   </fieldset>
 
@@ -37,8 +38,9 @@
     picture: acdc.jpg<br>
     changedate: 2013-09-25 11:36:46<br>
     <img src="upload_jpg/acdc.jpg." alt="Pictore of AC/DC" class="imgAnimation"><br>
-    <input type="button" name="btnEdit" value="Edit">
-    <input type="submit" name="btnDelete" value="Delete">
+
+    <button name="btnEdit">Edit</button>
+    <button type="submit" name="btnDelete">Delete</button>
 
     <input type="hidden" name="hidId" value="76">
     <input type="hidden" name="hidPictureFileName" value="acdc.jpg">
@@ -53,8 +55,9 @@
     picture: laleh.jpg<b>
     changedate: 2013-09-25 11:36:46<br>
     <img src="upload_jpg/laleh.jpg." alt="Picture of Laleh" class="imgAnimation"><br>
-    <input type="button" name="btnEdit" value="Edit">
-    <input type="submit" name="btnDelete" value="Delete">
+
+    <button name="btnEdit">Edit</button>
+    <button type="submit" name="btnDelete">Delete</button>
 
     <input type="hidden" name="hidId" value="77">
     <input type="hidden" name="hidPictureFileName" value="laleh.jpg">
