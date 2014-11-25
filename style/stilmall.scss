@@ -1,3 +1,7 @@
+body {
+	background-color: lightblue;
+}
+
 .errorClass {
 	color: red;
 	font-size: 16px;
@@ -8,22 +12,16 @@
 .imgAnimation{
 	border: gray solid 0.1em;
 	width: 25%;
-	height: 25%; 
+	height: 25%;
 	border-radius: 15px;
 	box-shadow: 5px 5px 5px #888;
-}
-
-.imgAnimation:hover {
-	 -moz-transition: all 0.25s linear;
-	 -moz-transform: rotate(-25deg) scale(1);
-}
-
-.imgAnimation:active{
-	-moz-transform: scale(4);
-}
-
-body {
-	background-color: lightblue;
+	&:hover {
+		transition: all 0.25s linear;
+		transform: rotate(-25deg) scale(1);
+	}
+	&:active {
+		transform: scale(4);
+	}
 }
 
 h1 {
@@ -33,7 +31,7 @@ h1 {
 	margin: 5px;
 }
 
-li{
+li {
 	font-family: Cambria;
 	font-size: 1.2em;
 	color: black;
@@ -70,25 +68,22 @@ header {
 	font-family: helvetica;
 	font-size: 14px;
 	color: black;
-}
-
-#menu ul li {
-	display: inline;
-	border: solid black 1px;
-	padding-top: 7px;
-	padding-bottom: 7px;
-	padding-right: 30px;
-	padding-left: 30px;
-	margin-right: 10px;
-}
-
-#menu ul li a {
-	text-decoration: none;
-	color: black;
-}
-
-#menu ul li a:hover {
-	color: red;
+	li {
+		display: inline;
+		border: solid black 1px;
+		padding-top: 7px;
+		padding-bottom: 7px;
+		padding-right: 30px;
+		padding-left: 30px;
+		margin-right: 10px;
+		a {
+			text-decoration: none;
+			color: black;
+			&:hover {
+				color: red;
+			}
+		}
+	}
 }
 
 #main {
@@ -107,7 +102,7 @@ header {
 
 nav {
 	width: 25%;
-	padding-top: 20px;	
+	padding-top: 20px;
 	padding-right: 25px;
 	float: right;
 	font-family: "arial narrow";
@@ -115,13 +110,13 @@ nav {
 	line-height: 60px;
 	text-align: center;
 	min-height: 300px;
+	ul {list-style-type: none}
+	a {
+
+	}
 }
 
 nav ul {
-	list-style-type: none;
-}
-
-nav a {
 	line-height: 20px;
 	margin-top: 20px;
 	text-decoration: none;
@@ -134,10 +129,9 @@ nav a {
 	padding-right: 30px;
 	height: auto;
 	display: block;
-}
-
-nav a:hover {
-	color: white;
+	&:hover {
+		color: white;
+	}
 }
 
 footer {
@@ -153,7 +147,7 @@ footer {
 }
 
 #wrapper {
-	margin-top: 40px; 
+	margin-top: 40px;
 	margin-bottom: 40px;
 	margin-left: auto;
 	margin-right: auto;
