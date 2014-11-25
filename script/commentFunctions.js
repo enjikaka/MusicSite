@@ -26,4 +26,4 @@ $('form').submit(function(e) {
   }
 });
 
-$( "#comments-accordion" ).accordion();
+$("#comments-accordion" ).accordion();

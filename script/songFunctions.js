@@ -7,18 +7,15 @@
 *	@param {Number} inArtistId - Id (fr?mandenyckel i databasen) f?r artisten s?gen knyts till.
 *	@param {String} inTitle - S?gtitel f?r s?gen som skall redigeras.
 *	@param {Number} inCount - Antal "gilla" f? s?gen som skall redigeras.
-*	@version 1.0
-*	@author Peter Bellstr?m
+*	@version 1.1
+*	@author Peter Bellstr?m, Jeremy Karlsson
 */
-function copySongFormData(inId, inFileName, inArtistId, inTitle, inCount) {
-
-	var theForm = document.getElementById("frmNewUpdateSong");
-
-    theForm.hidId.value = inId;
-    theForm.hidSoundFileName.value = inFileName;
-    theForm.selArtistId.value = inArtistId;
-	theForm.txtTitle.value = inTitle;
-    theForm.txtCount.value = inCount;
+function copySongFormData(inForm) {
+  var theForm = $("#frmNewUpdateSong");
+  $(inForm).find('input[type=hidden]').each(function() {
+    theForm.find('[name=txt'+this.name.split('hid')[1]+']').val(this.value);
+    //console.log('[name=txt'+this.name.split('hid')[1]+'] + ' + this.value);
+  });
 }
 
 /**
@@ -111,5 +108,21 @@ function validateSongFormData(theForm) {
 	}
 }
 
+$('[name=btnEdit]').click(function(e) {
+  e.preventDefault();
+  copySongFormData(e.target.parentNode);
+});
 
+$('form').submit(function(e) {
+  e.preventDefault();
+  var id = $(e.target).find('[name=hidId]').val();
+  if (verifyDeleteOfSong(id, $(e.target).find('[name=hidTitle]').val())) {
+    console.debug('Delete comment w. AJAX.');
+    $(e.target.parentNode).remove();
+    $('h3#c' + id).remove();
+  } else {
+    console.debug('Canceled delete.');
+  }
+});
 
+$("#songs-accordion" ).accordion();
