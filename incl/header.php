@@ -20,6 +20,7 @@
       }
     ?>
     <title><?php echo($title); ?></title>
+    <script src="jquery/jquery-2.1.1.js" defer></script>
   </head>
 <body>
 <div id="wrapper">

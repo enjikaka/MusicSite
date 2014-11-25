@@ -15,13 +15,7 @@
 </div><!-- end main -->
 <footer>Kontaktinformation</footer>
 </div><!-- end wrapper -->
-
 <?php
-	if(isset($jquery)) {
-?>
-	<script src="jquery/jquery-2.1.1.js"></script>
-<?php
-	}
 	if(isset($slimbox)) {
 ?>
 	<script src="slimbox2/js/slimbox2.js"></script>
