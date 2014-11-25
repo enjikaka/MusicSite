@@ -12,7 +12,7 @@
 	<form action="search.php" method="post" name="frmsearch">
 		<fieldset>
 			<legend>Song and/or Artist</legend>
-			<input type="text" id="txtsearch" name="txtSearch" title="Song and/or Artist!" required="required" placeholder="Type Artist or Song and press Search!" size="35" autofocus="autofocus"/><br />
+			<input type="text" id="txtsearch" name="txtSearch" title="Song and/or Artist!" required="required" placeholder="Type Artist or Song and press Search!" size="35" autofocus="autofocus"><br>
 			<button type="submit" id="btnsearch" name="btnSearch">Search</button>
 			<button type="reset" id="btnreset" name="btnReset">Reset</button>
 		</fieldset>
@@ -35,10 +35,10 @@
 		<form action="#" method="post" name="frmcomment" data-id="22">
 			<fieldset>
 				<legend>Comment on wheels.ogg</legend>
-				<textarea name="txtComment" cols="40" rows="10" title='Comment' required="required" placeholder="Write your comment!"></textarea><br />
-				<input type="hidden" name="hidId" value="22" />
-				<input type="submit" name="btnSave" value="Save" />
-				<input type="reset" name="btnReset" value="Reset" />
+				<textarea name="txtComment" cols="40" rows="10" title='Comment' required="required" placeholder="Write your comment!"></textarea><br>
+				<input type="hidden" name="hidId" value="22">
+				<button type="submit" name="btnSave">Save</button>
+				<button type="reset" name="btnReset">Reset</button>
 			</fieldset>
 		</form>
 
@@ -71,10 +71,10 @@
 		<form action="#" method="post" name="frmcomment" data-id="23">
 			<fieldset>
 				<legend>Comment on colors.ogg</legend>
-				<textarea name="txtComment" cols="40" rows="10" title='Comment' required="required" placeholder="Write your comment!"></textarea><br />
+				<textarea name="txtComment" cols="40" rows="10" title='Comment' required="required" placeholder="Write your comment!"></textarea><br>
 				<input type="hidden" name="hidId" value="23">
-				<input type="submit" name="btnSave" value="Save">
-				<input type="reset" name="btnReset" value="Reset">
+				<button type="submit" name="btnSave">Save</button>
+				<button type="reset" name="btnReset">Reset</button>
 			</fieldset>
 		</form>
 		<a href="#" data-id="23">Like Colors.ogg</a>
