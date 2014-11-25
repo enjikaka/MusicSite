@@ -52,7 +52,7 @@
   <form action="adminArtist.php" method="post" name="frmArtist">
     id: 77<br>
     name: Laleh<br>
-    picture: laleh.jpg<b>
+    picture: laleh.jpg<br>
     changedate: 2013-09-25 11:36:46<br>
     <img src="upload_jpg/laleh.jpg." alt="Picture of Laleh" class="imgAnimation"><br>
 
