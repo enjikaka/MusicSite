@@ -36,8 +36,8 @@
 				<label for="txtCount">Count</label><br>
 				<input type="text" id="txtCount" name="txtCount" title="Count"><br>
 
-				<input type="submit" id="btnSave" name="btnSave" value="Save">
-				<input type="button" id="btnReset" name="btnReset" value="Reset">
+				<button type="submit" id="btnSave">Save</button>
+				<button type="reset" id="btnReset">Reset</button>
 
 </form>
 
