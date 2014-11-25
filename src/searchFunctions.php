@@ -13,3 +13,4 @@
 		Om användaren inte har JavaScript aktiverat borde följande funktion anropas vid klick på spara knappen.
 		function insertComment($inDBConnection, $inSongId, $inCommentString) {}
 	*/
+?>
