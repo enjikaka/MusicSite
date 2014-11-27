@@ -118,6 +118,17 @@ header i {
   height: 350px;
 }
 
+div[data-comments] > * {
+  display: none;
+}
+div[data-comments].show > * {
+  display: block;
+}
+
+div[data-comments] > button {
+  display: block;
+}
+
 nav {
   background-color: #5b636d;
   -webkit-box-ordinal-group: 0;

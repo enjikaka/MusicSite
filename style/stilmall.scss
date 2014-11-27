@@ -88,6 +88,21 @@ header {
   }
 }
 
+div[data-comments] {
+  & > * {
+    display:none;
+  }
+  &.show {
+    & > * {
+      display:block;
+    }
+  }
+}
+
+div[data-comments] > button {
+  display:block;
+}
+
 nav {
 	background-color:#5b636d;
 	order:-1;

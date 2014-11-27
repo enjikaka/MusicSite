@@ -1,7 +1,7 @@
 <?php
 	$script="searchFunctions.js";
 	$title="Search";
-	//$slimbox = TRUE;
+	$slimbox = TRUE;
 	$jquery = TRUE;
 
 	include("incl/header.php");
@@ -21,7 +21,8 @@
 	<fieldset>
 		<legend>Searchresult Song</legend>
 		<!-- Wheels.ogg -->
-		<div data-comments="comments" data-id="22">
+		<div data-comments data-id="22">
+		<button>Show/hide comments</button>
 			<p>
 				<b>2013-10-22:</b>
 				<i>Wheels är bäst!</i>
@@ -30,17 +31,16 @@
 				<b>2013-09-27:</b>
 				<i>Bästa låten någonsin!</i>
 			</p>
+			<form action="#" method="post" name="frmcomment" data-id="22">
+				<fieldset>
+					<legend>Comment on wheels.ogg</legend>
+					<textarea name="txtComment" cols="40" rows="10" title='Comment' required="required" placeholder="Write your comment!"></textarea><br>
+					<input type="hidden" name="hidId" value="22">
+					<button type="submit" name="btnSave">Save</button>
+					<button type="reset" name="btnReset">Reset</button>
+				</fieldset>
+			</form>
 		</div>
-
-		<form action="#" method="post" name="frmcomment" data-id="22">
-			<fieldset>
-				<legend>Comment on wheels.ogg</legend>
-				<textarea name="txtComment" cols="40" rows="10" title='Comment' required="required" placeholder="Write your comment!"></textarea><br>
-				<input type="hidden" name="hidId" value="22">
-				<button type="submit" name="btnSave">Save</button>
-				<button type="reset" name="btnReset">Reset</button>
-			</fieldset>
-		</form>
 
 		<button data-id="22">Like wheels.ogg</button>
 		<p>
@@ -56,19 +56,17 @@
 		</p>
 		<hr>
 		<!-- colors.ogg -->
-		<div data-comments="comments" data-id="23">
+		<div data-comments data-id="23">
+			<button>Show/hide comments</button>
 			<p>
 				<b>2013-11-01:</b>
 				<i>Colors är bäst!</i>
 			</p>
-
 			<p>
 				<b>2013-11-02:</b>
 				<i>Detta är bästa låten någonsin!</i>
 			</p>
-		</div>
-
-		<form action="#" method="post" name="frmcomment" data-id="23">
+			<form action="#" method="post" name="frmcomment" data-id="23">
 			<fieldset>
 				<legend>Comment on colors.ogg</legend>
 				<textarea name="txtComment" cols="40" rows="10" title='Comment' required="required" placeholder="Write your comment!"></textarea><br>
@@ -77,6 +75,7 @@
 				<button type="reset" name="btnReset">Reset</button>
 			</fieldset>
 		</form>
+		</div>
 		<button data-id="23">Like Colors.ogg</button>
 		<p>
 			Title: Colors<br>
@@ -96,9 +95,9 @@
 	<fieldset>
 		<legend>Searchresult Artist</legend>
 			Name: AC/DC	<br>
-			<img src="upload_jpg/acdc.jpg" alt="Picture of AC/DC"><br>
+			<a href="upload_jpg/acdc.jpg" rel="lightbox"><img src="upload_jpg/acdc.jpg" alt="Picture of AC/DC"></a><br>
 			Name: Laleh<br>
-			<img src="upload_jpg/laleh.jpg" alt="laleh.jpg"><br>
+			<a href="upload_jpg/laleh.jpg" rel="lightbox"><img src="upload_jpg/laleh.jpg" alt="laleh.jpg"></a><br>
 	</fieldset>
 	<br>
 </div>
