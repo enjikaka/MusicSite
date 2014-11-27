@@ -13,7 +13,8 @@ $('div[data-comments] button').click(function() {
 
 $('form[name="frmcomment"]').submit(function(e) {
   e.preventDefault();
+  var id = this.dataset.id;
   $.getJSON('ajax/savecomment.php', function(data) {
-    console.log(data);
+    $('div[data-comments][data-id='+id+']').find('p').last().append('<p><b>'+data.date+': </b><i>'+data.comment+'</i></p>');
   });
 });

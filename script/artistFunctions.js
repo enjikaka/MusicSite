@@ -1,18 +1,6 @@
 ﻿//artistFunctions.js
 
 /**
-*	Funktionen resetArtistFormData rensar inmatad data i formuläret "frmNewUpdateArtist".
-*	@version 1.0
-*	@author Peter Bellström
-*/
-function resetArtistFormData() {
-	var theForm = document.getElementById("frmNewUpdateArtist");
-    theForm.hidId.value = "";
-    theForm.hidPictureFileName.value = "";
-    theForm.reset();
-}
-
-/**
 *	Funktionen copyArtistFormData kopierar inkommande parametrar till formuläret "frmNewUpdateArtist".
 *	@param {Number} inId - Id (primärnyckel i databasen) för artisten som skall redigeras.
 *	@param {String} inFileName - Filnamn för artisten som skall redigeras.
@@ -51,7 +39,7 @@ function verifyDeleteOfArtist(inId, inArtist) {
 */
 function checkFileExtension(inFileName) {
     var fileExtension = inFileName.substring(inFileName.length - 3);
-	
+
 	fileExtension = fileExtension.toLowerCase();
 
     if(fileExtension !== "jpg")
@@ -79,7 +67,7 @@ function validateArtistFormData() {
 		{
 			throw new Error("Artistname is missing!");
 		}
-		
+
 		if(theForm.hidId.value === "")
 		{
 			if(theForm.filePictureFileName.value === "")
@@ -93,9 +81,9 @@ function validateArtistFormData() {
 					throw new Error("Only jpg files are valid!");
 				}
             }
-			
+
 		}
-	
+
 		if(theForm.hidId.value !== "")
 		{
 			if(theForm.filePictureFileName.value !== "")
@@ -105,11 +93,11 @@ function validateArtistFormData() {
 					throw new Error("Only jpg files are valid!");
 				}
             }
-			
+
 		}
-		
+
 		return true;
-	
+
 	}
 	catch(oException)
 	{

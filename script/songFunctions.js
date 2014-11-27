@@ -107,7 +107,7 @@ $('[name=btnEdit]').click(function(e) {
   copySongFormData(e.target.parentNode);
 });
 
-$('form').submit(function(e) {
+$('form[name=frmSong]').submit(function(e) {
   e.preventDefault();
   var id = $(e.target).find('[name=hidId]').val();
   if (verifyDeleteOfSong(id, $(e.target).find('[name=hidTitle]').val())) {
@@ -116,6 +116,13 @@ $('form').submit(function(e) {
     $('h3#s' + id).remove();
   } else {
     console.debug('Canceled delete.');
+  }
+});
+
+$('form[name=frmNewUpdateSong]').submit(function(e) {
+  e.preventDefault();
+  if (validateSongFormData(this)) {
+    // Submit
   }
 });
 
