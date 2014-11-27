@@ -2,13 +2,13 @@
 	$script="searchFunctions.js";
 	$title="Search";
 	//$slimbox = TRUE;
-	//$jquery = TRUE;
+	$jquery = TRUE;
 
 	include("incl/header.php");
 ?>
 	<div id="content">
 	<h1>Search among artists and songs!</h1>
-	<hr>
+
 	<form action="search.php" method="post" name="frmsearch">
 		<fieldset>
 			<legend>Song and/or Artist</legend>
@@ -42,7 +42,7 @@
 			</fieldset>
 		</form>
 
-		<a href="#" data-id="22">Like wheels.ogg</a>
+		<button data-id="22">Like wheels.ogg</button>
 		<p>
 			Title: Wheels<br>
 			Song: wheels.ogg<br>
@@ -77,7 +77,7 @@
 				<button type="reset" name="btnReset">Reset</button>
 			</fieldset>
 		</form>
-		<a href="#" data-id="23">Like Colors.ogg</a>
+		<button data-id="23">Like Colors.ogg</button>
 		<p>
 			Title: Colors<br>
 			Song: colors.ogg<br>
