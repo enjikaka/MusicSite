@@ -9,10 +9,7 @@
 ?>
 <div id="content">
   <h1>Admin Artist</h1>
-  <hr>
-
   <!-- Hårdkodad HTML5 för Admin Artist -->
-
   <fieldset>
     <legend>New/Edit Artist</legend>
     <span id="jsErrorMsg" class="errorClass"></span>

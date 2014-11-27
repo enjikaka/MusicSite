@@ -6,6 +6,7 @@
   <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet">
     <link href="style/stilmall.css" rel="stylesheet">
     <?php
       if(isset($accordion)) {
@@ -22,6 +23,6 @@
     <title><?php echo($title); ?></title>
   </head>
 <body>
-<div id="wrapper">
-<header>My MusicSite</header>
+<div class="wrapper">
+<header><i>♪</i><span>My MusicSite</span></header>
 <div id="main">

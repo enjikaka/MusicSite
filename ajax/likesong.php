@@ -1,5 +1,4 @@
 <?php
-
 	/*
 		Öka tblsong.count med ett och spara i databasen.
 	*/
@@ -8,5 +7,4 @@
 	//{"gilla" : "100"}
 	jsonData = array("gilla" => "100");
 	echo(json_encode(jsonData));
-
 ?>
