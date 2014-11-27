@@ -8,11 +8,16 @@
 *	@version 1.0
 *	@author Peter Bellström
 */
-function copyArtistFormData(inId, inFileName, inArtist) {
-	var theForm = document.getElementById("frmNewUpdateArtist");
+function copyArtistFormData(inForm) {
+	/*var theForm = document.getElementById("frmNewUpdateArtist");
     theForm.hidId.value = inId;
     theForm.hidPictureFileName.value = inFileName;
-    theForm.txtArtist.value = inArtist;
+    theForm.txtArtist.value = inArtist;*/
+  var theForm = $("#frmNewUpdateArtist");
+  $(inForm).find('input[type=hidden]').each(function() {
+    theForm.find('[name=txt'+this.name.split('hid')[1]+']').val(this.value);
+    //console.log('[name=txt'+this.name.split('hid')[1]+'] + ' + this.value);
+  });
 }
 
 /**
@@ -59,7 +64,7 @@ function checkFileExtension(inFileName) {
 *	@version 1.0
 *	@author Peter Bellström
 */
-function validateArtistFormData() {
+function validateArtistFormData(theForm) {
 	var theForm = document.getElementById("frmNewUpdateArtist");
 	try
 	{
@@ -106,9 +111,22 @@ function validateArtistFormData() {
 	}
 }
 
+$('[name=btnEdit]').click(function(e) {
+  e.preventDefault();
+  copyArtistFormData(e.target.parentNode);
+});
 
+$('form[name=frmArtist]').submit(function(e) {
+  e.preventDefault();
+  verifyDeleteOfArtist(this.hidId.value, this.hidArtist.value);
+});
 
+$('form[name=frmNewUpdateArtist]').submit(function(e) {
+  e.preventDefault();
+  if (validateArtistFormData(this)) {
+    // Submit
+    console.log('submitting');
+  }
+});
 
-
-
-
+$("#songs-accordion" ).accordion();
