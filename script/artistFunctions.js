@@ -8,16 +8,11 @@
 *	@version 1.0
 *	@author Peter Bellström
 */
-function copyArtistFormData(inForm) {
-	/*var theForm = document.getElementById("frmNewUpdateArtist");
+function copyArtistFormData(inId, inFileName, inArtist) {
+  var theForm = document.getElementById("frmNewUpdateArtist");
     theForm.hidId.value = inId;
     theForm.hidPictureFileName.value = inFileName;
-    theForm.txtArtist.value = inArtist;*/
-  var theForm = $("#frmNewUpdateArtist");
-  $(inForm).find('input[type=hidden]').each(function() {
-    theForm.find('[name=txt'+this.name.split('hid')[1]+']').val(this.value);
-    //console.log('[name=txt'+this.name.split('hid')[1]+'] + ' + this.value);
-  });
+    theForm.txtArtist.value = inArtist;
 }
 
 /**
@@ -113,7 +108,8 @@ function validateArtistFormData(theForm) {
 
 $('[name=btnEdit]').click(function(e) {
   e.preventDefault();
-  copyArtistFormData(e.target.parentNode);
+  var form = $(e.target.parentNode)[0];
+  copyArtistFormData(form.elements.hidId.value, form.elements.hidPictureFileName.value, form.elements.hidArtist.value);
 });
 
 $('form[name=frmArtist]').submit(function(e) {
@@ -122,10 +118,8 @@ $('form[name=frmArtist]').submit(function(e) {
 });
 
 $('form[name=frmNewUpdateArtist]').submit(function(e) {
-  e.preventDefault();
-  if (validateArtistFormData(this)) {
-    // Submit
-    console.log('submitting');
+  if (!validateArtistFormData(e.target)) {
+    e.preventDefault();
   }
 });
 

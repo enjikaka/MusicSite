@@ -15,14 +15,10 @@ function verifyDeleteOfComment(inId, inText){
 }
 
 $('form').submit(function(e) {
-  e.preventDefault();
   var id = $(e.target).find('[name=hidId]').val();
-  if (verifyDeleteOfComment(id, $(e.target).find('[name=hidText]').val())) {
-    console.debug('Delete comment w. AJAX.');
-    $(e.target.parentNode).remove();
-    $('h3#c' + id).remove();
-  } else {
+  if (!verifyDeleteOfComment(id, $(e.target).find('[name=hidText]').val())) {
     console.debug('Canceled delete.');
+    e.preventDefault();
   }
 });
 

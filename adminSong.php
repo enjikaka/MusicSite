@@ -9,6 +9,15 @@
 ?>
 <div id="content">
 	<h1>Admin - Handle Songs</h1>
+
+	<?php
+
+	  if (isset($_POST['hidId'])) {
+	    echo 'Saving song: ' . $_POST['hidId'];
+	  }
+
+	  ?>
+
 	<!-- Hårdkodad HTML5 för Admin Song -->
 	<fieldset id="edit">
 		<legend>New/Edit Song</legend>

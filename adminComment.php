@@ -11,6 +11,13 @@
 	<div id="content">
 		<h1>Admin - Handle Comments</h1>
     <h2>Comments</h2>
+    <?php
+
+    if (isset($_POST['hidId'])) {
+      echo 'Removing comment with id: ' . $_POST['hidId'];
+    }
+
+    ?>
 		<div id="comments-accordion">
   		<!-- Hårdkodad HTML5 för Admin Comment -->
       <h3 id="c58">Comment #58</h3>

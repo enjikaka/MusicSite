@@ -21,8 +21,7 @@
 	<fieldset>
 		<legend>Searchresult Song</legend>
 		<!-- Wheels.ogg -->
-		<div data-comments data-id="22">
-		<button>Show/hide comments</button>
+		<div data-comments="comments" data-id="22">
 			<p>
 				<b>2013-10-22:</b>
 				<i>Wheels är bäst!</i>
@@ -42,7 +41,7 @@
 			</form>
 		</div>
 
-		<button data-id="22">Like wheels.ogg</button>
+		<a href="#" data-id="22">Like wheels.ogg</a>
 		<p>
 			Title: Wheels<br>
 			Song: wheels.ogg<br>
@@ -56,8 +55,7 @@
 		</p>
 		<hr>
 		<!-- colors.ogg -->
-		<div data-comments data-id="23">
-			<button>Show/hide comments</button>
+		<div data-comments="comments" data-id="23">
 			<p>
 				<b>2013-11-01:</b>
 				<i>Colors är bäst!</i>
@@ -76,7 +74,7 @@
 			</fieldset>
 		</form>
 		</div>
-		<button data-id="23">Like Colors.ogg</button>
+		<a href="#" data-id="23">Like Colors.ogg</a>
 		<p>
 			Title: Colors<br>
 			Song: colors.ogg<br>

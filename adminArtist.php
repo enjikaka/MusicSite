@@ -10,6 +10,15 @@
 <div id="content">
   <h1>Artists</h1>
   <!-- Hårdkodad HTML5 för Admin Artist -->
+
+  <?php
+
+  if (isset($_POST['hidId'])) {
+    echo 'Saving artist: ' . $_POST['hidId'];
+  }
+
+  ?>
+
   <fieldset>
     <legend>New/Edit Artist</legend>
     <span id="jsErrorMsg" class="errorClass"></span>

@@ -76,7 +76,7 @@ header {
   h2 {
     margin:0 1rem;
     padding:1rem 0;
-    font-size:12s0%;
+    font-size:120%;
     font-weight:500;
   }
   & > * {
@@ -85,17 +85,6 @@ header {
   img {
     width:350px;
     height:350px;
-  }
-}
-
-div[data-comments] {
-  & > * {
-    display:none;
-  }
-  &.show {
-    & > * {
-      display:block;
-    }
   }
 }
 

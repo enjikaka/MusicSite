@@ -6,12 +6,13 @@
 *	@version 1.0
 *	@author Jeremy Karlsson
 */
-function copySongFormData(inForm) {
-  var theForm = $("#frmNewUpdateSong");
-  $(inForm).find('input[type=hidden]').each(function() {
-    theForm.find('[name=txt'+this.name.split('hid')[1]+']').val(this.value);
-    //console.log('[name=txt'+this.name.split('hid')[1]+'] + ' + this.value);
-  });
+function copySongFormData(inId, inFileName, inArtistId, inTitle, inCount) {
+  var theForm = document.getElementById("frmNewUpdateSong");
+  theForm.hidId.value = inId;
+  theForm.hidSoundFileName.value = inFileName;
+  theForm.selArtistId.value = inArtistId;
+  theForm.txtTitle.value = inTitle;
+  theForm.txtCount.value = inCount;
 }
 
 /**
@@ -37,12 +38,13 @@ function verifyDeleteOfSong(inId, inTitle) {
 *	@author Peter Bellstr?m
 */
 function checkFileExtension(inFileName) {
-  var fileExtension = inFileName.substring(inFileName.length - 3);
+    var fileExtension = inFileName.substring(inFileName.length - 3);
   fileExtension = fileExtension.toLowerCase();
-  if(fileExtension !== 'ogg') {
-    return false;
-  }
-  return true;
+
+    if(fileExtension !== 'ogg'){
+        return false;
+    }
+    return true;
 }
 
 /**
@@ -54,9 +56,7 @@ function checkFileExtension(inFileName) {
 *	@author Peter Bellstr?m
 */
 function validateSongFormData(theForm) {
-	var theForm = document.getElementById("frmNewUpdateSong");
-
-  	try {
+  try {
 		if(theForm.selArtistId.selectedIndex === 0) {
 			throw new Error("Artist is missing!");
 		}
@@ -64,39 +64,30 @@ function validateSongFormData(theForm) {
 		if(theForm.txtTitle.value === "") {
 			throw new Error("Songtitle is missing!");
 		}
-
 		if(theForm.hidId.value === ""){
-			if(theForm.fileSoundFileName.value === "") {
-                throw new Error("Soundname is missing!");
-            }
-            else {
-                if(checkFileExtension(theForm.fileSoundFileName.value) === false) {
-					throw new Error('Only ogg files are valid!');
-				}
-            }
-
+      if(theForm.fileSoundFileName.value === "") {
+        throw new Error("Soundname is missing!");
+      }
+      else if(checkFileExtension(theForm.fileSoundFileName.value) === false) {
+        throw new Error('Only ogg files are valid!');
+      }
 		}
-
 		if(theForm.hidId.value !== "") {
 			if(theForm.hidSoundFileName.value !== null || theForm.hidSoundFileName.value !== "") {
-                if(checkFileExtension(theForm.hidSoundFileName.value) == false) {
+        if(checkFileExtension(theForm.hidSoundFileName.value) === false) {
 					throw new Error("Only ogg files are valid!");
 				}
-            }
+      }
 		}
-
 		if(theForm.txtCount.value === "") {
 			throw new Error("Count is missing!");
 		}
-
 		if(isNaN(theForm.txtCount.value)) {
 			throw new Error("Count is not a number!");
 		}
-
 		return true;
 	}
-	catch(oException)
-	{
+	catch(oException) {
 		window.document.getElementById("jsErrorMsg").innerHTML = oException.message;
 		return false;
 	}
@@ -104,7 +95,8 @@ function validateSongFormData(theForm) {
 
 $('[name=btnEdit]').click(function(e) {
   e.preventDefault();
-  copySongFormData(e.target.parentNode);
+  var form = $(e.target).parent()[0];
+  copySongFormData(form.elements.hidId.value, form.elements.hidSoundFileName.value, form.elements.hidArtistId.value, form.elements.hidTitle.value, form.elements.hidCount.value);
 });
 
 $('form[name=frmSong]').submit(function(e) {
@@ -120,9 +112,8 @@ $('form[name=frmSong]').submit(function(e) {
 });
 
 $('form[name=frmNewUpdateSong]').submit(function(e) {
-  e.preventDefault();
-  if (validateSongFormData(this)) {
-    // Submit
+  if (!validateSongFormData(e.target)) {
+    e.preventDefault();
   }
 });
 
